@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using PromotionEngine.Contracts.Models;
 using PromotionEngine.Service.Repository;
+using PromotionEngine.Contracts.Constants;
 
 namespace PromotionEngine.Service
 {
@@ -14,20 +15,20 @@ namespace PromotionEngine.Service
                 {
                     CartDetails = new List<CartDetail> {
                     new CartDetail {SKUId = 'A', NoOfUnits = 3}},
-                    Price = 130
+                    Price = PromotionEngineConstants.PromotionA
                 },
                 new PromotionType
                 {
                     CartDetails = new List<CartDetail> {
                     new CartDetail {SKUId = 'B', NoOfUnits = 2}},
-                    Price = 45
+                    Price = PromotionEngineConstants.PromotionB
                 },
                 new PromotionType
                 {
                     CartDetails = new List<CartDetail> {
                     new CartDetail {SKUId = 'C', NoOfUnits = 1},
                     new CartDetail {SKUId = 'D', NoOfUnits = 1}},
-                    Price = 30
+                    Price = PromotionEngineConstants.PromotionCD
                 }
             };
 

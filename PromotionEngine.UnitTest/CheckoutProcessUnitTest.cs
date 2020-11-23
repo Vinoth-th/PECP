@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Logging;
 using Moq;
-using PromotionEngine.Contracts.Models;
 using PromotionEngine.Service.Repository;
 using PromotionEngine.Service;
 using PromotionEngine.UnitTest.Helper;

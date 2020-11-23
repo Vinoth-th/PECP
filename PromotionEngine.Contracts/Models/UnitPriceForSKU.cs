@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using PromotionEngine.Contracts.Constants;
 
 namespace PromotionEngine.Contracts.Models
 {
@@ -9,16 +10,16 @@ namespace PromotionEngine.Contracts.Models
             switch (itemId)
             {
                 case 'A':
-                    return 50;
+                    return PromotionEngineConstants.ProductA;
 
                 case 'B':
-                    return 30;
+                    return PromotionEngineConstants.ProductB;
 
                 case 'C':
-                    return 20;
+                    return PromotionEngineConstants.ProductC;
 
                 case 'D':
-                    return 15;
+                    return PromotionEngineConstants.ProductD;
 
                 default:
                 {
