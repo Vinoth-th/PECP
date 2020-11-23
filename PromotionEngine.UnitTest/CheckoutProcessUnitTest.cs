@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -13,7 +13,7 @@ namespace PromotionEngine.Test
     public class CheckoutProcessUnitTest
     {
         [Fact]
-        public void Test_PromotionEngine_Scenario1()
+        public void SC1_UnitTest_PromotionEngine()
         {
             //Assign
             var cartItems = new List<char> { 'A', 'B', 'C' };
@@ -29,7 +29,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void Test_PromotionEngine_Scenario2()
+        public void SC2_UnitTest_PromotionEngine()
         {
             //Assign
             var cartItems = new List<char> { 'A', 'B', 'C', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B' };
@@ -45,7 +45,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void Test_PromotionEngine_Scenario3()
+        public void SC3_UnitTest_PromotionEngine()
         {
             //Act
             var cartItems = new List<char> { 'A', 'B', 'C', 'D', 'A', 'A', 'B', 'B', 'B', 'B' };
@@ -61,7 +61,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void Test_PromotionEngine_Scenario4()
+        public void SC4_UnitTest_PromotionEngine()
         {
             //Act
             var cartItems = new List<char> { 'A', 'B', 'C' };
@@ -77,7 +77,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void Test_PromotionEngine_Scenario5_PromotionTypeWithPercentageForSameItem()
+        public void SC5_UnitTest_PromotionEngine_PromotionTypeWithPercentageForSameItem()
         {
             //Act
             var cartItems = new List<char> { 'A', 'A', 'A' };
@@ -92,13 +92,13 @@ namespace PromotionEngine.Test
             Assert.Equal(50, orderValue);
         }
 
-        [Theory(DisplayName = "Test_CalculateTotalOrderValue_WithInvalidString")]
+        [Theory(DisplayName = "SC6_UnitTest_CalculateTotalOrderValue_WithInvalidString")]
         [InlineData("A,;,!", 50)]
         [InlineData(" ", 0)]
         [InlineData("1,2,3,4", 0)]
         [InlineData("F,E,G", 0)]
         [InlineData("A3C", 70)]
-        public void Test_CalculateTotalOrderValue_WithInvalidString(string inputCartString, double expectedOrderValue)
+        public void SC61_Test_CalculateTotalOrderValue_WithInvalidString(string inputCartString, double expectedOrderValue)
         {
             //Act
             var cartItems = inputCartString.Replace(',', ' ').Replace(" ", "").ToCharArray().ToList();
